@@ -1,0 +1,17 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.left {
+   left: 400px;
+}
+.back{
+  background: url("/images/bopi.jpg");
+  height: 60em;
+  color: #fff;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
