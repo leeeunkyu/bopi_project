@@ -11,18 +11,18 @@
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav
         li
-          a(href='/todos') 내가등록한 화장품
+          a(href='/list') 내가등록한 화장품
         li
-          a(href='/users') 게시판
+          a(href='/posts/start') 게시판
       ul.nav.navbar-nav.navbar-right
         if (!currentUser) 
           li
             a(href='/users/new') 회원가입
           li
-            a(href='/users/new') 로그인
+            a(href='/users/signin') 로그인
         else
           li
-            a(href='/users/#{currentUser._id}') 회원정보
+            a(href='/users/profile/#{currentUser._id}') 회원정보
           li
-            a(href='/signout') 로그아웃
+            a(href='/users/signout') 로그아웃
       
