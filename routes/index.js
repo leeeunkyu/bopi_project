@@ -6,10 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-//게시판을 위한 라우터
-
-router.get('/list', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/survey',function(req,res,next){
+  res.render('cosmetic/survey')
 });
+
 
 module.exports = router;

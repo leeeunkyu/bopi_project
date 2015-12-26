@@ -1,6 +1,7 @@
 var express = require('express');
     User = require('../models/User');
     Post = require('../models/Post');
+    Comment = require('../models/Comment');
 var router = express.Router();
 
 //게시판 작성시 로그인 여부를 알아보기위한 함수
@@ -12,14 +13,27 @@ function needAuth(req, res, next) {
       res.redirect('/posts/start');
     }
 }
-
-
+/*
+router.get('/:id',function (req,res,next) {
+  Post.findById(req.params.id,function(err,post){
+  if(err){
+    return next(err);
+  }
+  Comment.find({}, function(err, comments) {
+        if (err) {
+          return next(err);
+        }
+        res.render('posts/show', {post: post, comments: comments});
+      });
+  });
+});
+*/
 router.get('/start',function (req,res,next) {
-  Post.find({}, function(err, docs) {
+  Post.find({}, function(err, posts) {
   if (err) {
     return next(err);
   }
-    res.render('posts/index',{posts:docs});
+    res.render('posts/index',{posts:posts});
 });
 });
 
@@ -37,8 +51,10 @@ router.post('/save', function(req, res, next) {
     if (err) {
       return next(err);
     }
+    res.redirect('/posts/start');
   });
-res.redirect('/posts/start');
+  console.log('post');
+
 });
 
 
