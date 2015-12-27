@@ -3,4 +3,5 @@ extends layout
 block content
   .back
     h1 My beauty
-    button.btn.btn-info(type='submit')성분검색하기
+    form(action='/ingre/search', method='GET') 
+      button.btn.btn-info(type='submit')성분검색하기

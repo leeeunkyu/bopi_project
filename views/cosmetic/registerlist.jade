@@ -3,3 +3,43 @@ extends ../layout
 block content
   .container
     h1 등록한 화장품 리스트
+    | total #{pagination.numLists} coslist
+    table.table
+      tr
+        th 화장품명
+        th 평가
+        th 별점
+        th 등록일
+      each coslist in coslists
+        tr
+          td
+            a(href='/#{coslists.id}')= coslist.title
+          td= coslist.numComment
+          th= coslist.read
+          td= moment(coslist.createdAt).format('YYYY/MM/DD')
+    a.btn.btn-primary(href='/coslist/new') 화장품등록
+    
+    nav.center
+      ul.pagination
+        li(class=pagination.firstPage.cls): a(href=pagination.firstPage.url)
+          span(aria-hidden="true") &laquo;
+        li(class=pagination.prevPage.cls): a(href=pagination.prevPage.url)
+          span(aria-hidden="true") &lt;
+        each page in pagination.pages
+          li(class=page.cls)
+            a(href=page.url): span= page.text
+        li(class=pagination.nextPage.cls): a(href=pagination.nextPage.url)
+          span(aria-hidden="true") &gt;
+        li(class=pagination.lastPage.cls): a(href=pagination.lastPage.url)
+          span(aria-hidden="true") &raquo;
+  
+    form#deleteForm(style='display:none', method="POST")
+            
+      script(type='text/javascript').
+        $(".delete").click(function(e) {
+          var id = $(e.currentTarget).data('id');
+          if (confirm('정말 삭제하시겠습니까?')) {
+            $("#deleteForm").attr('action', "/posts/" + id + "?_method=DELETE").submit();          
+          }
+          return false;
+        });
