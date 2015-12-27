@@ -11,7 +11,7 @@ block content
     each post in posts
       tr
         td
-          a(href='/posts/#{post.id}')= post.title
+          a(href='/postcomment/#{post.id}')= post.title
         td= post.numComment
         td= moment(post.createdAt).format('YYYY/MM/DD')
 

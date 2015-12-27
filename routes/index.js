@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/survey',function(req,res,next){
-  res.render('cosmetic/survey')
+  res.render('cosmetic/survey');
 });
 
 

@@ -17,7 +17,7 @@ block content
         td= comment.content
         td= moment(comment.createdAt).format('YYYY/MM/DD')
   
-  form.form-inline(action='/posts/' + post._id + '/comments', method='POST')
+  form.form-inline(action='/postcomment/' + post._id + '/comments', method='POST')
     .form-group
       label.sr-only(for='email') email
       input.form-control(name='email', placeholder='email')

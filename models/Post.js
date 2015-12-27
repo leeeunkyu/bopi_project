@@ -2,7 +2,6 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var schema = new Schema({
-  post: {type: Schema.Types.ObjectId, required: true, trim: true},
   title: {type: String, required: true, trim: true},
   content: {type: String, required: true, trim: true},
   numComment: {type: Number, default: 0},

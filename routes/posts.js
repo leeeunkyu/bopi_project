@@ -13,21 +13,6 @@ function needAuth(req, res, next) {
       res.redirect('/posts/start');
     }
 }
-/*
-router.get('/:id',function (req,res,next) {
-  Post.findById(req.params.id,function(err,post){
-  if(err){
-    return next(err);
-  }
-  Comment.find({}, function(err, comments) {
-        if (err) {
-          return next(err);
-        }
-        res.render('posts/show', {post: post, comments: comments});
-      });
-  });
-});
-*/
 router.get('/start',function (req,res,next) {
   Post.find({}, function(err, posts) {
   if (err) {
@@ -56,7 +41,5 @@ router.post('/save', function(req, res, next) {
   console.log('post');
 
 });
-
-
 
 module.exports = router;
