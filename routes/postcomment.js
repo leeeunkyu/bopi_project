@@ -12,6 +12,7 @@ router.get('/:id',function (req,res,next) {
         if (err) {
           return next(err);
         }
+        post.read = post.read + 1;
         res.render('posts/show', {post: post, comments: comments});
       });
   });
