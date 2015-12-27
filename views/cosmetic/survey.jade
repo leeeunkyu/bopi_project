@@ -2,4 +2,41 @@ extends ../layout
 
 block content
   .container
-    h1 피부타입조사하기...상상만해도 개발하기 까다롭겠다...
+    form.form-signin(action='/survey/complete', method='POST')  
+      .alert.alert-success
+        input(type='checkbox',name='value')
+        label(for='typeA') 나는항상늘 건조하다
+        p
+        input(type='checkbox')
+        label(for='typeA') 나는정말늘 건조하다
+        p
+        input(type='checkbox')
+        label(for='typeA') 나는엄청나게 건조하다
+        p
+        input(type='checkbox')
+        label(for='typeA') 나는흑흑 건조하다
+      .alert.alert-info
+        input(type='checkbox')
+        label(for='typeA') 나는항상늘 기름지다
+        p
+        input(type='checkbox')
+        label(for='typeA') 나는정말늘 개기름이다
+        p
+        input(type='checkbox')
+        label(for='typeA') 나는엄청나게 기름덩어리다
+        p
+        input(type='checkbox')
+        label(for='typeA') 나는흑흑 기름덩어리다
+      .alert.alert-danger
+        input(type='checkbox')
+        label(for='typeA') 나는항상늘 여드름이다
+        p
+        input(type='checkbox')
+        label(for='typeA') 나는정말늘 얼굴이붉다
+        p
+        input(type='checkbox')
+        label(for='typeA') 나는엄청나게 민감하다
+        p
+        input(type='checkbox')
+        label(for='typeA') 나는흑흑 복합성인가부다
+      button.btn.btn-lg.btn-primary.btn-block(type='submit') 피부 타입검사하기   
