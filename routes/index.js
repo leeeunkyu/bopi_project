@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 //화장품 등록
 router.get('/list',function (req,res,next) {
-  res.render('cosmetic/registerlist')
+  res.render('cosmetic/registerlist');
 });
 
 
