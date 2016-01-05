@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 //화장품 등록
 
 
-router.get('/list', function(req, res, next) {
+router.get('/list',needAuth, function(req, res, next) {
   var page = req.query.page || 1;
   page = parseInt(page, 10);
   var perPage = 10;
@@ -45,12 +45,14 @@ router.post('/survey/complete',function (req,res,next) {
   res.render('cosmetic/result');
 });
 
-
-
-
-
-
-
+function needAuth(req, res, next) {
+    if (req.session.user) {
+      next();
+    } else {
+      req.flash('danger', '로그인이 필요합니다.');
+      res.render('index');
+    }
+}
 
 function pagination(count, page, perPage, funcUrl) {
   var pageMargin = 3;
@@ -69,7 +71,7 @@ function pagination(count, page, perPage, funcUrl) {
     });
   }
   return {
-    numPosts: count,
+    numLists: count,
     firstPage: {cls: (page === 1) ? 'disabled' : '', url: funcUrl(1)},
     prevPage: {cls: (page === 1) ? 'disabled' : '', url: funcUrl(prevPage)},
     nextPage: {cls: (page === lastPage) ? 'disabled' : '', url: funcUrl(nextPage)},

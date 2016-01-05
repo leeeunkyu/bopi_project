@@ -12,6 +12,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var posts = require('./routes/posts');
 var postcomment = require('./routes/postcomment');
+var coslist = require('./routes/coslist');
 var ingre = require('./routes/ingre');
 var app = express();
 
@@ -57,7 +58,7 @@ app.use('/users', users);
 app.use('/posts', posts);
 app.use('/postcomment',postcomment);
 app.use('/ingre',ingre);
-
+app.use('/coslist',coslist);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

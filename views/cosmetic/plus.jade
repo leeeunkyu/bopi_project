@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  .container
+    .login
+      input(type='text',name='list',class='go2')
+      input(type='button',value='화장품검색',class='go')
+      input(type='button',value='화장품검색2',class='go3')
+      
+      #demo
+  script(src='/javascripts/gogo.js')
+   //언더스코어? 이거사용 이거 음 즐겨찾기확인해보자
+  script.
+    $(function(){
+      var serach = new Serach();
+    });
+  script#te(type='text/template')
