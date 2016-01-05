@@ -1,7 +1,18 @@
 extends layout
-
 block content
   .back
     h1 My beauty
+    script(src='/javascripts/slide.js')
     form(action='/ingre/search', method='GET') 
       button.btn.btn-info(type='submit')성분검색하기
+  .homeimg
+    .slideshow
+      img(src='/images/bopi.jpg',class="active")
+      img(src='/images/2.jpg')
+      img(src='/images/3.jpg')
+      img(src='/images/4.jpg')
+        
+  script.
+    $(function(){
+      var show = new showImg();
+    });

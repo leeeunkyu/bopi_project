@@ -2,7 +2,9 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+.con{
+  padding: 50px;
+}
 a {
   color: #00B7FF;
 }
@@ -10,14 +12,38 @@ a {
    left: 400px;
 }
 .back{
-  background: url("/images/bopi.jpg");
-  height: 60em;
+  top: 70px;
+  left: 100px;
+  width: 310px;
+  position: absolute;
   color: #fff;
   text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
+
 .login{
   padding: 100px;
 }
 .pt{
-  
+
+}
+.slideshow {
+  top: 150px;
+  width: 95%;
+  height: 550px;
+  left: 10px;
+
+  position: relative;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slideshow img {
+  position: absolute;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.slideshow img.active {
+  opacity: 1.0;
 }
